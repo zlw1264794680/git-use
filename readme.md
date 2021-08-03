@@ -56,7 +56,7 @@ git add .
 git commit -m '提交说明'
 
 // 相当于操作了“git add .”,并且提交到本地仓库，会提示要写“操作说明”
-git commit -a
+git commit -a //首次添加到暂存区，需要使用“git add .“操作来实现
 
 // 拉去远程主机origin的远程仓库的xx分支内容，合并到本地（应该是合并到本地仓库版本，有冲突，就手动解决冲突）
 git pull origin 远程仓库的xx分支  // 将远程主机origin的远程仓库xx分支拉取合并到本地分支
