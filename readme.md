@@ -55,7 +55,7 @@ git add .
 // 清空暂存区，提交到版本库（仓库）
 git commit -m '提交说明'
 
-// 相当于操作了“git add .”,并且提交到本地仓库
+// 相当于操作了“git add .”,并且提交到本地仓库，会提示要写“操作说明”
 git commit -a
 
 // 拉去远程主机origin的远程仓库的xx分支内容，合并到本地（应该是合并到本地仓库版本，有冲突，就手动解决冲突）
@@ -88,6 +88,17 @@ git branch xxx   // 创建xxx分支，但是不切换到该分支
 git checkout -b xxx  //创建并切换到xxx分支
 
 git checkout xxx // 切换到xxx分支
+
+// 合并分支
+git merge
+git pull = git fetch + git merge    // 解释
+git merge xx分支   // 将xx分支内容合并到当前分支，会提示要写“操作说明”
+
+// 删除分支
+git branch -d xx分支  // 删除本地xx分支
+
+// 回退版本
+git reset 命令用于回退版本，可以指定退回某一次提交的版本
 ```
 
 
@@ -112,5 +123,15 @@ git log --oneline // 查看简介版本
 
 // 查看指定文件的修改记录
 git blame xxx
+
+// 查看文件内容（可在合并有冲突的情况下，查看文件，有冲突标记）
+cat xxx文件
+
+// 编辑文件
+vim xxx文件
+
+
+// 在 Git 中，我们可以用 git add 要告诉 Git 文件冲突已经解决
 ```
 
+> 一般情况下，多人开发，至少设置三个分支。如master分支作为项目最终发布版本分支；dev分支作为多人开发最终版本分支；zlw分支（以自己名字命名的分支）作为个人开发分支；
