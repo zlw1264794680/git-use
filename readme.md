@@ -64,8 +64,9 @@ git pull origin 远程仓库的xx分支:xx分支  // 将远程主机origin的远
 （同类型的还有fetch，但是这个命令只拉取，不合并。这里不作描述）
 
 // （检查无误之后）提交“版本库的最新版本”到远程主机origin（这里的origin指代远程主机，这在一开始就有建立本地与远程主机的联系所形成的）的远程仓库的xx分支
-git push -u origin xxx分支
-git push -u origin xxx分支:xxx分支。 // 提交指定xx分支到远程主机origin的xxx分支
+git push origin xxx分支
+git push origin xxx分支:xxx分支。 // 提交指定xx分支到远程主机origin的xxx分支
+git push -u origin xxx分支 //  提交当前分支到远程主机origin的xxx分支，（-u）并设置“远程主机origin的xxx分支”为默认push分支，之后的“git push”没有指明远程分支就都是该xx分支
 ```
 
 ### 分支信息：
@@ -81,7 +82,11 @@ git push -u origin xxx分支:xxx分支。 // 提交指定xx分支到远程主机
 ### 分支管理：
 
 ```
-git branch  // 查看所有分支
+git branch  // 查看所有本地分支
+git branch -r // 查看所有远程分支
+git branch -a // 查看所有分支
+
+
 
 git branch xxx   // 创建xxx分支，但是不切换到该分支
 
