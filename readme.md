@@ -55,6 +55,9 @@ git add .
 // 清空暂存区，提交到版本库（仓库）
 git commit -m '提交说明'
 
+// 追加到上一次提交到版本中
+git commit -a
+
 // 拉去远程主机origin的远程仓库的xx分支内容，合并到本地（应该是合并到本地仓库版本，有冲突，就手动解决冲突）
 git pull origin 远程仓库的xx分支  // 将远程主机origin的远程仓库xx分支拉取合并到本地分支
 git pull origin 远程仓库的xx分支:xx分支  // 将远程主机origin的远程仓库xx分支拉取合并到指定分支
@@ -91,9 +94,14 @@ git checkout xxx // 切换到xxx分支
 
 ### 补充命令：
 
+> 补充一些会用到的命令
+
 ```
 // 查看配置信息
 git config  // 配置命令的相关命令文档
 git config --list // 查看配置信息
+
+// 查看当前分支的状态
+git status
 ```
 
