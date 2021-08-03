@@ -64,9 +64,9 @@ git pull origin 远程仓库的xx分支:xx分支  // 将远程主机origin的远
 （同类型的还有fetch，但是这个命令只拉取，不合并。这里不作描述）
 
 // （检查无误之后）提交“版本库的最新版本”到远程主机origin（这里的origin指代远程主机，这在一开始就有建立本地与远程主机的联系所形成的）的远程仓库的xx分支
-git push origin xxx分支   // 提交当前分支到远程主机origin的xxx分支
-git push origin xxx分支:xxx分支。 // 提交指定xx分支到远程主机origin的xxx分支
-git push -u origin xxx分支 //  提交当前分支到远程主机origin的xxx分支，（-u）并设置“远程主机origin的xxx分支”为默认push分支，之后的“git push”没有指明远程分支就都是该xx分支
+git push origin xxx分支   // 提交“xxx分支”到远程主机origin的“xxx分支”
+git push origin xxx分支:xxx分支。 // 提交“指定xxx分支”到远程主机origin的“xxx分支”
+git push -u origin xxx分支 //  提交“xxx分支”到远程主机origin的“xxx分支”，（“-u”指的是对于每个最新或成功推送的分支，添加上游【跟踪】引用，【一般】在首次推送的时候需要建立，之后就可以在对应的分支下直接“git push”来实现本地分支与远程仓库分支的一一对应关系传输）
 ```
 
 ### 分支信息：
@@ -89,6 +89,10 @@ git branch -a // 查看所有分支
 
 git branch xxx   // 创建xxx分支，但是不切换到该分支
 git branch -d xx分支  // 删除本地xx分支
+git push origin --delete [branchName]  // 删除远程仓库的分支
+git branch --unset-upstream  // 假如本地有这个分支，远程删除了。可以通过该命令恢复被删除的远程分支
+git branch | grep 'branchName' // 分支模糊查找
+git fetch -p // 清理本地无效分支(远程已删除本地没删除的分支)，没有效果的原因是fetch的特性，使用“git pull -p”来清理本地无效分支
 
 git checkout -b xxx  //创建并切换到xxx分支
 git checkout xxx // 切换到xxx分支
