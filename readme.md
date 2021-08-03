@@ -69,6 +69,8 @@ git push origin xxx分支   // 提交“xxx分支”到远程主机origin的“x
 git push origin xxx分支:xxx分支。 // 提交“指定xxx分支”到远程主机origin的“xxx分支”
 git push -u origin xxx分支 //  提交“xxx分支”到远程主机origin的“xxx分支”，（“-u”指的是对于每个最新或成功推送的分支，添加上游【跟踪】引用，【一般】在首次推送的时候需要建立，之后就可以在对应的分支下直接“git push”来实现本地分支与远程仓库分支的一一对应关系传输）
 git push -u origin xxx分支:xxx分支
+
+// 默认情况下：git pull 远程主机名（origin）/ git push 远程主机名（origin）命令，没有指明分支，都是拉取对应的有跟踪记录的分支；
 ```
 
 ### 分支信息：
@@ -88,6 +90,8 @@ git push -u origin xxx分支:xxx分支
 git branch  // 查看所有本地分支
 git branch -r // 查看所有远程分支
 git branch -a // 查看所有分支
+git branch -vv // 查看当前分支的默认推送远端分支（本地分支有没有跟踪记录）、最后一次推送内容
+
 
 git branch xxx   // 创建xxx分支，但是不切换到该分支
 git branch -d xx分支  // 删除本地xx分支
@@ -156,7 +160,8 @@ git diff --cached [file] // 显示暂存区与最近一次commit的差异
 git diff --staged [file] // 显示暂存区与最近一次commit的差异 
 git diff [commit1]...[commit2] //比较俩次提交的差异
 
-
+// 另一种设置“实现本地分支与远程分支形成跟踪”的命令
+git branch --set-upstream-to=远端库/远端分支 本地分支名（git push -u 远端库 远端分支 [本地分支]）
 
 // 查看文件内容（可在合并有冲突的情况下，查看文件，有冲突标记）
 cat xxx文件
