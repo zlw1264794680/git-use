@@ -64,9 +64,11 @@ git pull origin 远程仓库的xx分支:xx分支  // 将远程主机origin的远
 （同类型的还有fetch，但是这个命令只拉取，不合并。这里不作描述）
 
 // （检查无误之后）提交“版本库的最新版本”到远程主机origin（这里的origin指代远程主机，这在一开始就有建立本地与远程主机的联系所形成的）的远程仓库的xx分支
+// 注意：本地分支与远程分支名称必须要一致，才能提交成功。一一对应的关系
 git push origin xxx分支   // 提交“xxx分支”到远程主机origin的“xxx分支”
 git push origin xxx分支:xxx分支。 // 提交“指定xxx分支”到远程主机origin的“xxx分支”
 git push -u origin xxx分支 //  提交“xxx分支”到远程主机origin的“xxx分支”，（“-u”指的是对于每个最新或成功推送的分支，添加上游【跟踪】引用，【一般】在首次推送的时候需要建立，之后就可以在对应的分支下直接“git push”来实现本地分支与远程仓库分支的一一对应关系传输）
+git push -u origin xxx分支:xxx分支
 ```
 
 ### 分支信息：
