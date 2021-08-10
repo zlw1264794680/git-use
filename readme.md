@@ -17,7 +17,7 @@
 
   **配置截图：**
 
-![image-20210803160149121](/Users/zhangyuewei/Library/Application Support/typora-user-images/image-20210803160149121.png)
+![image-20210803160139705](image-20210803160139705.png)
 
 ### 建立本地与远程仓库的联系：
 
